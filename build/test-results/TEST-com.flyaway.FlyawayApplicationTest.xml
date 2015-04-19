@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.flyaway.FlyawayApplicationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-04-19T11:46:28" hostname="simon-ui-MacBook-Pro.local" time="0.001">
+  <properties/>
+  <testcase name="contextLoads" classname="com.flyaway.FlyawayApplicationTest" time="0.001"/>
+  <system-out><![CDATA[2015-04-19 20:46:28.776  INFO 2200 --- [    Test worker] o.s.t.c.web.WebTestContextBootstrapper   : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-19 20:46:28.776  INFO 2200 --- [    Test worker] o.s.t.c.web.WebTestContextBootstrapper   : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@66746531, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@639fa883, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6f0638e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@10180331, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@18798e38]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
