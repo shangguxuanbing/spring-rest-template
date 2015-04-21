@@ -1,4 +1,4 @@
-package com.pylon.restful.exception;
+package com.pylon.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
 

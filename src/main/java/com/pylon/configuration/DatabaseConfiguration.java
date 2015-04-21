@@ -21,9 +21,9 @@ import javax.sql.DataSource;
  */
 @EnableTransactionManagement
 @Configuration
-//location of mapper (java)
+/* location of mapper (java) */
 @MapperScan("com.pylon.persistence.mapper")
-//location of service implementation
+/* location of service implementation */
 @ComponentScan({"com.pylon.persistence.implementation"})
 public class DatabaseConfiguration implements TransactionManagementConfigurer {
 

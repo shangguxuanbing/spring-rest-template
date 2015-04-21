@@ -1,4 +1,4 @@
-package com.pylon.restful;
+package com.pylon.common;
 
 import com.pylon.persistence.domain.Book;
 import com.pylon.controller.BookController;

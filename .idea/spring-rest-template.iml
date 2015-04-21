@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="spring-rest-template" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/java/com/flyaway/configurations/DatabaseConfig.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/flyaway/FlyawayApplication.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/flyaway/configurations/RestfulConfig.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/flyaway/configurations/SecurityConfig.java</file>
-        </fileset>
-        <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
-          <file>file://$MODULE_DIR$/src/main/java/com/pylon/configuration/ApplicationConfiguration.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/pylon/configuration/DatabaseConfiguration.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/pylon/configuration/SecurityConfiguration.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/pylon/VaultApplication.java</file>
-          <file>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mangofactory/swagger-springmvc/1.0.2/aa907b28cdb551c378a4ee61e3e5150b3083ee01/swagger-springmvc-1.0.2.jar!/com/mangofactory/swagger/configuration/SpringSwaggerConfig.class</file>
-          <file>file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mangofactory/swagger-springmvc/1.0.2/aa907b28cdb551c378a4ee61e3e5150b3083ee01/swagger-springmvc-1.0.2.jar</file>
-          <file>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mangofactory/swagger-models/1.0.2/f564dccc0f4a97fdfe390608a74ad4de8c40fff7/swagger-models-1.0.2.jar!/com/mangofactory/swagger/models/configuration/SwaggerModelsConfiguration.class</file>
-          <file>file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mangofactory/swagger-models/1.0.2/f564dccc0f4a97fdfe390608a74ad4de8c40fff7/swagger-models-1.0.2.jar</file>
-        </fileset>
-      </configuration>
-    </facet>
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
@@ -47,6 +27,24 @@
           <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="web application context" name="MVC application context" removed="true">
+          <file>file://$MODULE_DIR$/src/main/webapp/applicationContext.xml</file>
+        </fileset>
+        <fileset id="web dispatcher servlet context" name="MVC dispatcher servlet context" removed="true" />
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/com/pylon/configuration/ApplicationConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/pylon/configuration/DatabaseConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/pylon/configuration/SecurityConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/pylon/VaultApplication.java</file>
+          <file>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mangofactory/swagger-springmvc/1.0.2/aa907b28cdb551c378a4ee61e3e5150b3083ee01/swagger-springmvc-1.0.2.jar!/com/mangofactory/swagger/configuration/SpringSwaggerConfig.class</file>
+          <file>file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mangofactory/swagger-springmvc/1.0.2/aa907b28cdb551c378a4ee61e3e5150b3083ee01/swagger-springmvc-1.0.2.jar</file>
+          <file>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mangofactory/swagger-models/1.0.2/f564dccc0f4a97fdfe390608a74ad4de8c40fff7/swagger-models-1.0.2.jar!/com/mangofactory/swagger/models/configuration/SwaggerModelsConfiguration.class</file>
+          <file>file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mangofactory/swagger-models/1.0.2/f564dccc0f4a97fdfe390608a74ad4de8c40fff7/swagger-models-1.0.2.jar</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
@@ -150,5 +148,9 @@
     <orderEntry type="library" exported="" name="Gradle: javax.servlet.jsp:jsp-api:2.2" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: org.apache.tomcat.embed:tomcat-embed-jasper:8.0.20" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: org.eclipse.jdt.core.compiler:ecj:4.4.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Spring MVC-4.0.9.RELEASE" level="project" />
   </component>
 </module>

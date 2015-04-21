@@ -1,7 +1,7 @@
 package com.pylon.controller;
 
 import com.pylon.persistence.domain.RestError;
-import com.pylon.restful.exception.ResourceNotFoundException;
+import com.pylon.exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
