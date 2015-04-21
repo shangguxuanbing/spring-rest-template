@@ -1,6 +1,6 @@
 package com.pylon.persistence.domain;
 
-import org.springframework.hateoas.ResourceSupport; /* simon:뭐하는 놈인가? */
+import org.springframework.hateoas.ResourceSupport;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;

@@ -1,6 +1,6 @@
 package com.pylon.persistence.domain;
 
-import org.pojomatic.Pojomatic; /* simon:뭐하는 놈인가 ? */
+import org.pojomatic.Pojomatic;
 import org.pojomatic.annotations.AutoProperty;
 
 import javax.xml.bind.annotation.XmlRootElement;
