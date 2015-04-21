@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.kohsuke:asm4:4.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.kohsuke/asm4/4.0/f0a90131b3cba4df4fcaa1a12c99418cb210398f/asm4-4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.kohsuke/asm4/4.0/7a28779a0c14dda9c9fb2a25513e3d092d7c2950/asm4-4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.pojomatic:pojomatic:2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.pojomatic/pojomatic/2.0/c5eb26d2a14b7592d803025fa0eacbf9447b5ad0/pojomatic-2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.pojomatic/pojomatic/2.0/63c2a0add43cbe63f7495391ff990390b3f8289c/pojomatic-2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

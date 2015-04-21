@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-starter-hornetq:1.2.3.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-hornetq/1.2.3.RELEASE/d1c121e6f3df701419a6d372af490a97455b0163/spring-boot-starter-hornetq-1.2.3.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-hornetq/1.2.3.RELEASE/ec74d6a23542514e57a3616d3790ea1c8dfcdce2/spring-boot-starter-hornetq-1.2.3.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

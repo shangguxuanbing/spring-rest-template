@@ -6,6 +6,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
@@ -20,8 +21,8 @@ import javax.sql.DataSource;
  */
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.flyaway.common.mapper.*")
-@ComponentScan({"com.flyaway.common.service.*"})
+@MapperScan("com.flyaway.common.mapper.books") //mapper 인터페이스 위치
+@ComponentScan({"com.flyaway.common.implementation.books"}) //서비스 impl 위치
 public class DatabaseConfig implements TransactionManagementConfigurer {
 
     @Bean
@@ -44,6 +45,7 @@ public class DatabaseConfig implements TransactionManagementConfigurer {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
+        sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/*.xml"));
         return sessionFactory.getObject();
     }
 
