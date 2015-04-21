@@ -1,0 +1,33 @@
+﻿@charset "utf-8";
+
+body { 
+	background: #395547 url(http://images4.fanpop.com/image/photos/20900000/House-Lannister-game-of-thrones-20939047-1600-1000.jpg) bottom left fixed no-repeat;
+	font: normal 20px "맑은 고딕", "Trebuchet MS", "Lucida Grande", Verdana, Sans-Serif;
+	}
+	
+p {
+	color: white;
+}
+
+a {
+	color: red;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+a:hover {
+	color: red;
+	border-bottom: 1px solid black;
+}
+
+h1 {
+	font-size: 45px;
+}
+
+.menu_group {
+	padding-left: 40px; 
+}
+
+span.other {
+	color: white;
+}

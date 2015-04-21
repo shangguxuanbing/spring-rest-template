@@ -1,7 +1,7 @@
 package com.pylon.restful;
 
 import com.pylon.persistence.domain.Book;
-import com.pylon.restful.controller.BookController;
+import com.pylon.controller.BookController;
 import com.pylon.persistence.domain.BookResource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;

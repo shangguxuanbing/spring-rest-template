@@ -17,6 +17,28 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER");
+                .withUser("user").password("pass").roles("USER");
     }
+
+    /*
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .addFilter()
+                .addFilter()
+                .exceptionHandling().accessDeniedHandler()
+                .authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                    .usernameParameter("username")
+                    .passwordParameter("password")
+                .loginProcessingUrl("/api/v1/operators/session/create")
+                    .authenticationDetailsSource()
+                    .successHandler()
+                    .failureHandler()
+                .and()
+
+                .httpBasic();
+    }
+    */
 }

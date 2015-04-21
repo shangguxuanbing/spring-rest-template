@@ -13,9 +13,11 @@ import org.springframework.web.accept.ContentNegotiationManagerFactoryBean;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.xml.bind.Marshaller;
 import java.util.HashMap;
@@ -28,7 +30,7 @@ import java.util.Map;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.pylon.restful.controller" }, useDefaultFilters = false,
+@ComponentScan(basePackages = { "com.pylon.controller" }, useDefaultFilters = false,
                includeFilters = { @ComponentScan.Filter(Controller.class),  @ComponentScan.Filter(ControllerAdvice.class) })
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
@@ -71,7 +73,7 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
     public Jaxb2Marshaller jaxb2Marshaller()  {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
         marshaller.setPackagesToScan(new String[] {
-                "com.pylon.*", /* range 조절 필요 */
+                "com.pylon", /* range 조절 필요 */
                 "org.springframework.hateoas"});
 
         Map<String, Object> marshallerProperties = new HashMap<String, Object>();
@@ -103,5 +105,18 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
 		return resolver;
 	}
+
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+
+    @Bean
+    public InternalResourceViewResolver viewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/views/");
+        resolver.setSuffix(".jsp");
+        return resolver;
+    }
 
 }
