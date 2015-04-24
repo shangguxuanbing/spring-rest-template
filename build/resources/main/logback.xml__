@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+    <property name="ENVIRONMENT" value="local" />
+    <property name="APP_NAME" value="backend" />
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <!-- ref: https://wiki.base22.com/display/btg/How+to+setup+SLF4J+and+LOGBack+in+a+web+app+-+fast -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <OnMismatch>NEUTRAL</OnMismatch>
+            <OnMatch>DENY</OnMatch>
+        </filter>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${jboss.server.log.dir}/${APP_NAME}.log</file>
+        <append>true</append>
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <OnMismatch>NEUTRAL</OnMismatch>
+            <OnMatch>DENY</OnMatch>
+        </filter>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${APP_NAME}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>10</maxIndex>
+            <maxHistory>100</maxHistory>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>300MB</maxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <if condition='property("ENVIRONMENT").contains("local")'>
+        <then>
+            <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+                <appender-ref ref="STDOUT" />
+            </appender>
+        </then>
+        <else>
+            <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+                <appender-ref ref="ROLLING" />
+            </appender>
+        </else>
+    </if>
+
+    <logger name="java.sql" level="WARN" />
+    <logger name="org.mybatis" level="WARN" />
+    <logger name="org.apache.commons" level="INFO" />
+    <logger name="org.apache.ibatis" level="DEBUG" />
+    <logger name="org.springframework" level="DEBUG" />
+    <logger name="org.springframework.beans" level="INFO" />
+    <logger name="org.springframework.context" level="INFO" />
+    <logger name="org.springframework.core" level="INFO" />
+    <logger name="org.springframework.data.redis" level="INFO" />
+    <logger name="org.springframework.jdbc" level="WARN" />
+    <logger name="org.springframework.security" level="WARN" />
+    <logger name="org.springframework.web" level="INFO" />
+
+    <!-- in order to debug some marshalling issues, this needs to be TRACE -->
+    <logger name="org.springframework.web.servlet.mvc" level="WARN" />
+    <logger name="org.springframework.transaction" level="DEBUG" />
+    <logger name="org.junit" level="DEBUG" />
+    <logger name="org.apache.ws.security.util.Loader" level="INFO" />
+    <logger name="org.springframework.aop.framework.CglibAopProxy" level="INFO" />
+
+    <!-- added by simon -->
+    <logger name="org.springframework.ws.server.MessageTracing.sent" level="TRACE" />
+    <logger name="org.springframework.ws.server.MessageTracing.received" level="TRACE" />
+
+
+    <!-- hide following log messages -->
+    <!-- <logger name="org.springframework.data.redis.core.RedisConnectionUtils" level="OFF" /> <logger name="org.springframework.integration.endpoint.PollingConsumer"
+        level="OFF" /> -->
+
+    <!-- Root Logger -->
+    <root level="DEBUG">
+        <appender-ref ref="ASYNC" />
+    </root>
+
+</configuration>

@@ -1,6 +1,6 @@
 package com.pylon.persistence.service.books;
 
-import com.pylon.persistence.domain.Book;
+import com.pylon.persistence.mybatis.domain.Book;
 
 import java.util.List;
 

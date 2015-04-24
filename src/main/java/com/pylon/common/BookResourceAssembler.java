@@ -1,8 +1,8 @@
 package com.pylon.common;
 
-import com.pylon.persistence.domain.Book;
+import com.pylon.persistence.mybatis.domain.Book;
 import com.pylon.controller.BookController;
-import com.pylon.persistence.domain.BookResource;
+import com.pylon.persistence.mybatis.domain.BookResource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 

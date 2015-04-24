@@ -64,8 +64,8 @@ dependencies {
     compile("org.mybatis:mybatis-spring:1.2.2")
     compile("org.pojomatic:pojomatic:2.0")
 
-    runtime("com.h2database:h2")
-    runtime("mysql:mysql-connector-java")
+//    runtime("com.h2database:h2")
+    runtime("mysql:mysql-connector-java:5.1.34")
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
 

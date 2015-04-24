@@ -1219,7 +1219,7 @@ CookieAuthorization.prototype.apply = function (obj) {
 };
 
 /**
- * Password Authorization is a basic auth implementation
+ * Password Authorization is a basic auth serviceImpl
  */
 var PasswordAuthorization = module.exports.PasswordAuthorization = function (name, username, password) {
   this.name = name;
@@ -4161,15 +4161,15 @@ var isArray = require('is-array')
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
 exports.INSPECT_MAX_BYTES = 50
-Buffer.poolSize = 8192 // not used by this implementation
+Buffer.poolSize = 8192 // not used by this serviceImpl
 
 var kMaxLength = 0x3fffffff
 var rootParent = {}
 
 /**
  * If `Buffer.TYPED_ARRAY_SUPPORT`:
- *   === true    Use Uint8Array implementation (fastest)
- *   === false   Use Object implementation (most compatible, even IE6)
+ *   === true    Use Uint8Array serviceImpl (fastest)
+ *   === false   Use Object serviceImpl (most compatible, even IE6)
  *
  * Browsers that support typed arrays are IE 10+, Firefox 4+, Chrome 7+, Safari 5.1+,
  * Opera 11.6+, iOS 4.2+.
@@ -4186,7 +4186,7 @@ var rootParent = {}
  *    incorrect length in some situations.
  *
  * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they will
- * get the Object implementation, which is slower but will work correctly.
+ * get the Object serviceImpl, which is slower but will work correctly.
  */
 Buffer.TYPED_ARRAY_SUPPORT = (function () {
   try {
@@ -7147,7 +7147,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// Support: IE<10
 	// Check if getElementById returns elements by name
 	// The broken getElementById methods don't pick up programatically-set names,
-	// so use a roundabout getElementsByName test
+	// so use a roundabout getElementsByName sample
 	support.getById = assert(function( div ) {
 		docElem.appendChild( div ).id = expando;
 		return !doc.getElementsByName || !doc.getElementsByName( expando ).length;
@@ -7242,7 +7242,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		// Regex strategy adopted from Diego Perini
 		assert(function( div ) {
 			// Select is set to empty string on purpose
-			// This is to test IE's treatment of not explicitly
+			// This is to sample IE's treatment of not explicitly
 			// setting a boolean content attribute,
 			// since its presence should be enough
 			// http://bugs.jquery.com/ticket/12359
@@ -7252,7 +7252,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 			// Support: IE8, Opera 11-12.16
 			// Nothing should be selected when empty strings follow ^= or $= or *=
-			// The test attribute must be unknown in Opera but "safe" for WinRT
+			// The sample attribute must be unknown in Opera but "safe" for WinRT
 			// http://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
 			if ( div.querySelectorAll("[msallowcapture^='']").length ) {
 				rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
@@ -9786,8 +9786,8 @@ var data_user = new Data();
 //		paths to a single mechanism.
 //	3. Use the same single mechanism to support "private" and "user" data.
 //	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
-//	5. Avoid exposing implementation details on user objects (eg. expando properties)
-//	6. Provide a clear path for implementation upgrade to WeakMap in 2014
+//	5. Avoid exposing serviceImpl details on user objects (eg. expando properties)
+//	6. Provide a clear path for serviceImpl upgrade to WeakMap in 2014
 
 var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
 	rmultiDash = /([A-Z])/g;
@@ -11678,7 +11678,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 				return;
 			}
 
-			// Hook needed; redefine it so that the support test is not executed again.
+			// Hook needed; redefine it so that the support sample is not executed again.
 			return (this.get = hookFn).apply( this, arguments );
 		}
 	};
@@ -11730,9 +11730,9 @@ function addGetHookIf( conditionFn, hookFn ) {
 		jQuery.extend( support, {
 			pixelPosition: function() {
 
-				// This test is executed only once but we still do memoizing
+				// This sample is executed only once but we still do memoizing
 				// since we can use the boxSizingReliable pre-computing.
-				// No need to check if the test was already performed, though.
+				// No need to check if the sample was already performed, though.
 				computePixelPositionAndBoxSizingReliable();
 				return pixelPositionVal;
 			},
@@ -15901,7 +15901,7 @@ var baseMatches = require('./baseMatches'),
     identity = require('../utility/identity');
 
 /**
- * The base implementation of `_.callback` which supports specifying the
+ * The base serviceImpl of `_.callback` which supports specifying the
  * number of arguments to provide to `func`.
  *
  * @private
@@ -15994,7 +15994,7 @@ var objectProto = Object.prototype;
 var objToString = objectProto.toString;
 
 /**
- * The base implementation of `_.clone` without support for argument juggling
+ * The base serviceImpl of `_.clone` without support for argument juggling
  * and `this` binding `customizer` functions.
  *
  * @private
@@ -16097,7 +16097,7 @@ module.exports = baseCopy;
 var isObject = require('../lang/isObject');
 
 /**
- * The base implementation of `_.create` without support for assigning
+ * The base serviceImpl of `_.create` without support for assigning
  * properties to the created object.
  *
  * @private
@@ -16125,7 +16125,7 @@ var baseForOwn = require('./baseForOwn'),
     createBaseEach = require('./createBaseEach');
 
 /**
- * The base implementation of `_.forEach` without support for callback
+ * The base serviceImpl of `_.forEach` without support for callback
  * shorthands and `this` binding.
  *
  * @private
@@ -16139,7 +16139,7 @@ module.exports = baseEach;
 
 },{"./baseForOwn":41,"./createBaseEach":60}],37:[function(require,module,exports){
 /**
- * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
+ * The base serviceImpl of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
  * without support for callback shorthands and `this` binding, which iterates
  * over `collection` using the provided `eachFunc`.
  *
@@ -16166,7 +16166,7 @@ module.exports = baseFind;
 
 },{}],38:[function(require,module,exports){
 /**
- * The base implementation of `_.findIndex` and `_.findLastIndex` without
+ * The base serviceImpl of `_.findIndex` and `_.findLastIndex` without
  * support for callback shorthands and `this` binding.
  *
  * @private
@@ -16193,7 +16193,7 @@ module.exports = baseFindIndex;
 var createBaseFor = require('./createBaseFor');
 
 /**
- * The base implementation of `baseForIn` and `baseForOwn` which iterates
+ * The base serviceImpl of `baseForIn` and `baseForOwn` which iterates
  * over `object` properties returned by `keysFunc` invoking `iteratee` for
  * each property. Iterator functions may exit iteration early by explicitly
  * returning `false`.
@@ -16213,7 +16213,7 @@ var baseFor = require('./baseFor'),
     keysIn = require('../object/keysIn');
 
 /**
- * The base implementation of `_.forIn` without support for callback
+ * The base serviceImpl of `_.forIn` without support for callback
  * shorthands and `this` binding.
  *
  * @private
@@ -16232,7 +16232,7 @@ var baseFor = require('./baseFor'),
     keys = require('../object/keys');
 
 /**
- * The base implementation of `_.forOwn` without support for callback
+ * The base serviceImpl of `_.forOwn` without support for callback
  * shorthands and `this` binding.
  *
  * @private
@@ -16250,7 +16250,7 @@ module.exports = baseForOwn;
 var indexOfNaN = require('./indexOfNaN');
 
 /**
- * The base implementation of `_.indexOf` without support for binary searches.
+ * The base serviceImpl of `_.indexOf` without support for binary searches.
  *
  * @private
  * @param {Array} array The array to search.
@@ -16279,7 +16279,7 @@ module.exports = baseIndexOf;
 var baseIsEqualDeep = require('./baseIsEqualDeep');
 
 /**
- * The base implementation of `_.isEqual` without support for `this` binding
+ * The base serviceImpl of `_.isEqual` without support for `this` binding
  * `customizer` functions.
  *
  * @private
@@ -16423,7 +16423,7 @@ module.exports = baseIsEqualDeep;
 
 },{"../lang/isArray":96,"../lang/isTypedArray":102,"./equalArrays":69,"./equalByTag":70,"./equalObjects":71,"./isHostObject":78}],45:[function(require,module,exports){
 /**
- * The base implementation of `_.isFunction` without support for environments
+ * The base serviceImpl of `_.isFunction` without support for environments
  * with incorrect `typeof` results.
  *
  * @private
@@ -16442,7 +16442,7 @@ module.exports = baseIsFunction;
 var baseIsEqual = require('./baseIsEqual');
 
 /**
- * The base implementation of `_.isMatch` without support for callback
+ * The base serviceImpl of `_.isMatch` without support for callback
  * shorthands and `this` binding.
  *
  * @private
@@ -16505,7 +16505,7 @@ module.exports = baseLodash;
 var baseEach = require('./baseEach');
 
 /**
- * The base implementation of `_.map` without support for callback shorthands
+ * The base serviceImpl of `_.map` without support for callback shorthands
  * and `this` binding.
  *
  * @private
@@ -16531,7 +16531,7 @@ var baseIsMatch = require('./baseIsMatch'),
     toObject = require('./toObject');
 
 /**
- * The base implementation of `_.matches` which does not clone `source`.
+ * The base serviceImpl of `_.matches` which does not clone `source`.
  *
  * @private
  * @param {Object} source The object of property values to match.
@@ -16576,7 +16576,7 @@ var baseIsEqual = require('./baseIsEqual'),
     toObject = require('./toObject');
 
 /**
- * The base implementation of `_.matchesProperty` which does not coerce `key`
+ * The base serviceImpl of `_.matchesProperty` which does not coerce `key`
  * to a string.
  *
  * @private
@@ -16600,7 +16600,7 @@ module.exports = baseMatchesProperty;
 
 },{"./baseIsEqual":43,"./isStrictComparable":83,"./toObject":92}],51:[function(require,module,exports){
 /**
- * The base implementation of `_.property` which does not coerce `key` to a string.
+ * The base serviceImpl of `_.property` which does not coerce `key` to a string.
  *
  * @private
  * @param {string} key The key of the property to get.
@@ -16619,7 +16619,7 @@ var identity = require('../utility/identity'),
     metaMap = require('./metaMap');
 
 /**
- * The base implementation of `setData` without support for hot loop detection.
+ * The base serviceImpl of `setData` without support for hot loop detection.
  *
  * @private
  * @param {Function} func The function to associate metadata with.
@@ -18088,7 +18088,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
 var objToString = objectProto.toString;
 
 /**
- * A fallback implementation of `_.isPlainObject` which checks if `value`
+ * A fallback serviceImpl of `_.isPlainObject` which checks if `value`
  * is an object created by the `Object` constructor or has a `[[Prototype]]`
  * of `null`.
  *
@@ -18144,7 +18144,7 @@ var objectProto = Object.prototype;
 var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
- * A fallback implementation of `Object.keys` which creates an array of the
+ * A fallback serviceImpl of `Object.keys` which creates an array of the
  * own enumerable property names of `object`.
  *
  * @private

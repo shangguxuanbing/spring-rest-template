@@ -8,8 +8,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+//import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+//import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+//import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+//import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
@@ -21,18 +24,23 @@ import javax.sql.DataSource;
  */
 @EnableTransactionManagement
 @Configuration
-/* location of mapper (java) */
-@MapperScan("com.pylon.persistence.mapper")
-/* location of service implementation */
-@ComponentScan({"com.pylon.persistence.implementation"})
+@MapperScan("com.pylon.persistence.mybatis.mapper")     /* location of mapper (java) */
+@ComponentScan({"com.pylon.persistence.serviceImpl"})   /* location of service serviceImpl */
 public class DatabaseConfiguration implements TransactionManagementConfigurer {
 
     @Bean
     public DataSource dataSource() {
-        return new EmbeddedDatabaseBuilder()
-                .setName("db_mango")
-                .setType(EmbeddedDatabaseType.H2)
-                .build();
+//        return new EmbeddedDatabaseBuilder()
+//                .setName("db_mango")
+//                .setType(EmbeddedDatabaseType.H2)
+//                .build();
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://simon.dev.mango:3306/db_mango?autoReconnect=true&useUnicode=true&characterEncoding=utf8");
+        dataSource.setUsername("root");
+        dataSource.setPassword("rmflsakdrh");
+
+        return dataSource;
     }
 
     @Bean

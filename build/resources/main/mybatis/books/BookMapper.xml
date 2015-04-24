@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.pylon.persistence.mapper.books.BookMapper">
+<mapper namespace="com.pylon.persistence.mybatis.mapper.books.BookMapper">
 
-  <resultMap id="BaseResultMap" type="com.pylon.persistence.domain.Book">
+  <resultMap id="BaseResultMap" type="com.pylon.persistence.mybatis.domain.Book">
     <id column="ID" jdbcType="BIGINT" property="id" />
     <result column="TITLE" jdbcType="VARCHAR" property="title" />
     <result column="CREATOR" jdbcType="VARCHAR" property="creator" />
@@ -26,7 +26,7 @@
   </select>
   
   <!-- 도서 정보 등록 -->
-  <insert id="insert" parameterType="com.pylon.persistence.domain.Book">
+  <insert id="insert" parameterType="com.pylon.persistence.mybatis.domain.Book">
     INSERT INTO BOOK (ID, TITLE, CREATOR, TYPE, DATE)
     VALUES (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, 
       #{type,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP}
@@ -34,7 +34,7 @@
   </insert>
  
   <!-- 도서 정보 수정 -->
-  <update id="updateByPrimaryKey" parameterType="com.pylon.persistence.domain.Book">
+  <update id="updateByPrimaryKey" parameterType="com.pylon.persistence.mybatis.domain.Book">
     UPDATE BOOK 
     SET TITLE = #{title,jdbcType=VARCHAR},
       CREATOR = #{creator,jdbcType=VARCHAR},

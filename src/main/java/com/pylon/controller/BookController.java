@@ -1,7 +1,7 @@
 package com.pylon.controller;
 
-import com.pylon.persistence.domain.Book;
-import com.pylon.persistence.domain.BookResource;
+import com.pylon.persistence.mybatis.domain.Book;
+import com.pylon.persistence.mybatis.domain.BookResource;
 import com.pylon.persistence.service.books.BookService;
 import com.pylon.common.BookResourceAssembler;
 import com.pylon.exception.ResourceNotFoundException;

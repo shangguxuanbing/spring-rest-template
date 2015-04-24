@@ -32,7 +32,7 @@ if ( typeof countdown.counter == 'undefined' ) {
     }
 if(countdown.counter > 0) {
 	document.getElementById('count').innerHTML = countdown.counter--;
-    setTimeout(countdown, 3);
+    setTimeout(countdown, 5);
     }
 else {
     location.href = '/static/swagger-ui/index.html';
